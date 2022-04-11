@@ -1,5 +1,6 @@
 package io.jenkinslab.demoProject.controller;
 
+import java.util.Date;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -13,6 +14,7 @@ public class TestController {
 	 
     @GetMapping("/counter")
     public String myView(Map model) {
+        System.out.println("***********"+new Date());
         counter.set(counter.get()+1);
         model.put("counter", counter.get());
         return "demo-view-page";
